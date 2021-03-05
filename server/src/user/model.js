@@ -12,20 +12,10 @@ const Schema = new mongoose.Schema({
         unique: true,
         lowercase: true
     },
-    emailVerified: {
-        type: Boolean,
-        default: false
-    },
     password: String,
-    phone: {
-        number: {
-            type: String
-        },
-        verified: {
-            type: Boolean,
-            default: false
-        }
-    }
+    
+    // books
+    // matched users
 })
 
 Schema.pre('save', function(next){
