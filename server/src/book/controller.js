@@ -13,7 +13,7 @@ export default {
                 },
             };
             
-            BookModel.findByIdAndUpdate(userId, newProfile, {new: true})
+            BookModel.findByIdAndUpdate(bookId, newProfile, {new: true})
             .then(() => res.sendStatus(200))
             .catch(next)
         })
