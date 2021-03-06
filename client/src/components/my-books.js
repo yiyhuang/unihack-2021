@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../../style/style.scss";
-import books from "../data/books";
+import books from "../data/my-books";
 import { FlipCard } from "../functions/FlipCard";
 
 export default class MyBooks extends Component {
