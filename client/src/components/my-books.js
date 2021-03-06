@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../style/style.scss";
+import books from "../data/books";
 
 export default class MyBooks extends Component {
   render() {
@@ -7,8 +8,10 @@ export default class MyBooks extends Component {
       <div class="main">
         <h1 class="title">My Books</h1>
         <div class="columns">
-          <div class="column">
-            {/* foreach(book in books) */}
+          {/* foreach(book in books) */}
+          {/* {books.map((book)=>   )} */}
+
+          {/* <div class="column">
             <div class="card">
               <a class="card-image" href="/#my-books/:bookID">
                 <figure class="image is-6by7">
@@ -23,7 +26,7 @@ export default class MyBooks extends Component {
                 <h2 class="subtitle">The Cat in the Hat</h2>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div class="column">
             <div class="card">
@@ -92,10 +95,27 @@ export default class MyBooks extends Component {
               </div>
             </div>
           </div>
-
-          
         </div>
       </div>
     );
   }
+}
+
+function BookCard(props) {
+  return (
+    <div class="card">
+      <a class="card-image" href="/#my-books/:bookID">
+        <figure class="image is-6by7">
+          <img
+            src={props.imgSrc}
+            alt={props.imgSrc}
+            width="100%"
+          />
+        </figure>
+      </a>
+      <div class="card-content">
+        <h2 class="subtitle">The Cat in the Hat</h2>
+      </div>
+    </div>
+  );
 }

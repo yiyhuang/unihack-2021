@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../style/style.scss";
+import {FlipCard} from '../functions/FlipCard.js'
 
 export default class App extends Component {
   render() {
@@ -7,11 +8,10 @@ export default class App extends Component {
       <div>
         <h1 class="title">Books recommended for you!</h1>
         <h1 class="subtitle">
-          Press the like button to start your exchange journey!
+          Press the like button to start your book exchange journey!
         </h1>
         <div class="columns is-vcentered">
           <div class="column has-text-right">
-                />
             <IconButton command="left" />
           </div>
           <div class="column">
@@ -36,29 +36,6 @@ export default class App extends Component {
   }
 }
 
-function FlipCard(props) {
-  return (
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="card">
-            <a class="card-image" href="/#my-books/:bookID">
-              <figure class="image is-6by7">
-                <img src={props.imageSrc} alt={props.title} />
-              </figure>
-            </a>
-            <div class="card-content">
-              <h2 class="subtitle">{props.title}</h2>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card-back">
-          <h1>{props.description}</h1>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function IconButton(props) {
   let returnImg;
