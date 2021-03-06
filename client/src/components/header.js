@@ -13,7 +13,7 @@ class Header extends Component {
             Sign out
           </a>
         </div>
-        </div>ƒ
+        </div>
       );
     } else {
       return [
