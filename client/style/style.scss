@@ -2,68 +2,19 @@ body {
   background-color: white;
   .cointainer {
     padding: 10px;
-    padding-top: 30px;
+    padding-top: 50px;
   }
 
-  nav {
-    .navbar-toggler {
-      outline: none;
-      border: none;
-    }
-  }
+  // nav {
+  //   .navbar-toggler {
+  //     outline: none;
+  //     border: none;
+  //   }
+  // }
 
   /* Center website */
   .main {
     max-width: 1000px;
     margin: auto;
-  }
-
-  .row {
-    margin: 8px -16px;
-  }
-
-  /* Add padding BETWEEN each column */
-  .row,
-  .row > .col {
-    padding: 8px;
-  }
-
-  /* Create four equal columns that floats next to each other */
-  .col {
-    float: right;
-    width: 25%;
-  }
-
-  /* Clear floats after rows */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  /* bookCard */
-  .bookCard {
-    background-color: rgb(221, 216, 216);
-    padding: 10px;
-    position: absolute;
-    text-align: center;
-  }
-
-  button.btn {
-    cursor: pointer;
-  }
-
-  /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (max-width: 900px) {
-    .col {
-      width: 50%;
-    }
-  }
-
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .col {
-      width: 100%;
-    }
   }
 }

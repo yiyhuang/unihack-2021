@@ -1,58 +1,69 @@
-import React, {Component} from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
-import { NavLink } from 'react-router-dom';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actions from "../actions";
+import { NavLink } from "react-router-dom";
 
 class Header extends Component {
-    renderSignButton(){
-        if (this.props.authenticated){
-            return (
-                <li className="nav-item">
-                    <NavLink className="nav-link" to="/signout">Sign out</NavLink>
-                </li>
-            )
-        }else{
-            return (
-                [
-                    <li className="nav-item" key="1">
-                        <NavLink to="/signin" className="nav-link">Sign in</NavLink>
-                    </li>,
-                    <li className="nav-item" key="2">
-                        <NavLink to="/signup" className="nav-link">Sign Up</NavLink>
-                    </li>
-                ]
-            )
-        }
+  renderSignButton() {
+    if (this.props.authenticated) {
+      return (
+        <div class="navbar-end">
+            <div class="navbar-item">
+          <a class="button is-light is-size-5" href="/#signout">
+            Sign out
+          </a>
+        </div>
+        </div>ƒ
+      );
+    } else {
+      return [
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary is-size-5" href="/#signup">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light is-size-5" href="/#signin">
+                Sign in
+              </a>
+            </div>
+          </div>
+        </div>,
+      ];
     }
-    render() {
-        return (
-            <nav className="navbar navbar-expand-sm navbar-light bg-light">
-                <NavLink className="navbar-brand" to="/">MERN</NavLink>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/my-books">My Books</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/account">Account</NavLink>
-                        </li>
-                    </ul>
-                    <ul className="navbar-nav">
-                        {this.renderSignButton()}
-                    </ul>
-                </div>
-            </nav>
-        )
-    }
+  }
+  render() {
+    return (
+      <nav class="navbar is-warning is-spaced" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand" >
+          <a href="/">
+            <img src="../img/logo.png" alt="Page turners" width="80"/>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item is-size-5" href="/#my-books">
+              My Books
+            </a>
+            <a class="navbar-item is-size-5" href="/#account">
+              Account
+            </a>
+          </div>
+        </div>
+
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">{this.renderSignButton()}</ul>
+        </div>
+      </nav>
+    );
+  }
 }
 
-function mapStateToProps({auth}){
-    return {
-        authenticated: auth.authenticated
-    }
+function mapStateToProps({ auth }) {
+  return {
+    authenticated: auth.authenticated,
+  };
 }
 
-export default connect(mapStateToProps, actions)(Header)
+export default connect(mapStateToProps, actions)(Header);
