@@ -3,11 +3,14 @@ import bcrypt from 'bcrypt-nodejs';
 
 // Define the model
 const Schema = new mongoose.Schema({
-    // id
-    // title
+    book:{
+        title: String,
+        catogory: String,
+        discription: String,
+    },
+
     // image
     // tag
-    // description
 })
 
 // Export the model

@@ -14,8 +14,11 @@ const Schema = new mongoose.Schema({
     },
     password: String,
     
-    // books
-    // matched users
+    books:{
+        
+    },
+
+    //matched_users:{}
 })
 
 Schema.pre('save', function(next){

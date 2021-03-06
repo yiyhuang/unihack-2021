@@ -1,11 +1,11 @@
-import UserController from './controller';
+import BookController from './controller';
 
-// const router = require('express').Router();
+const router = require('express').Router();
 
-// router.get('/profile', (req, res)=>{
-//     res.send(req.user);
-// })
+router.get('/profile', (req, res)=>{
+    res.send(req.book);
+})
 
-// router.post('/profile', UserController.updateProfile)
+router.post('/profile', BookController.updateProfile)
 
 export default router;
