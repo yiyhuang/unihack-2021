@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../../style/style.scss";
-import {FlipCard} from '../functions/FlipCard.js'
+import { FlipCard } from "../functions/FlipCard.js";
 
 export default class App extends Component {
   render() {
@@ -14,16 +14,18 @@ export default class App extends Component {
           <div class="column has-text-right">
             <IconButton command="left" />
           </div>
-          <div class="column">
-            <FlipCard
-              title="The Cat in the Hat"
-              imageSrc="https://images-na.ssl-images-amazon.com/images/I/81drfTT9ZfL._AC_UL200_SR200,200_.jpg"
-              description="Chosen for a virtual lockdown read from us grandparents to 2
+          <center>
+            <div class="column has-text-centered">
+              <FlipCard
+                title="The Cat in the Hat"
+                imageSrc="https://images-na.ssl-images-amazon.com/images/I/81drfTT9ZfL._AC_UL200_SR200,200_.jpg"
+                description="Chosen for a virtual lockdown read from us grandparents to 2
                     year old grand daughter. Poetic, fun to read, and a naughty
                     cat story that puts everything right before mum comes home.
                     A great bedtime reading choice."
-            />
-          </div>
+              />
+            </div>
+          </center>
           <div class="column has-text-left">
             <IconButton command="right" />
           </div>
@@ -35,7 +37,6 @@ export default class App extends Component {
     );
   }
 }
-
 
 function IconButton(props) {
   let returnImg;
