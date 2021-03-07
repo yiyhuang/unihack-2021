@@ -2,7 +2,6 @@ import React, { Component, useState } from "react";
 import "../../style/style.scss";
 import { FlipCard } from "../functions/FlipCard.js";
 import other_books from "../data/other-books.js";
-import my_books from "../data/my-books.js";
 
 export default class App extends Component {
   render() {

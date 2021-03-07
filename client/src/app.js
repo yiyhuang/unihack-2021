@@ -8,6 +8,7 @@ import reduxThunk from 'redux-thunk';
 import App from './components/app';
 import Home from './components/home';
 import MyBooks from './components/my-books';
+import MyMatches from './components/my-matches';
 import Account from './components/account';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
@@ -38,6 +39,7 @@ ReactDOM.render(
           <Route path="/signout" component= {Signout} />
 
           <Route path="/my-books" component= {MyBooks} />
+          <Route path="/my-matches" component= {MyMatches} />
 
         </Switch>
       </App>

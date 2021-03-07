@@ -2,6 +2,7 @@ const other_books = [
   {
     id: 5,
     title: "The Boy, the Mole, the Fox and the Horse",
+    owner: "iamJames",
     imgSrc:
       "https://images-na.ssl-images-amazon.com/images/I/71eJk7GtUOL._AC_UL200_SR200,200_.jpg",
     description:
@@ -12,6 +13,7 @@ const other_books = [
   {
     id: 6,
     title: "Wacky Wednesday",
+    owner: "iamJames",
     imgSrc:
       "https://images-na.ssl-images-amazon.com/images/I/81yL8GKdrhL._AC_UL200_SR200,200_.jpg",
     description:
@@ -22,6 +24,7 @@ const other_books = [
   {
     id: 7,
     title: "The Sneetches and Other Stories",
+    owner: "amyWatermelon",
     imgSrc:
       "https://images-na.ssl-images-amazon.com/images/I/81ZRrzqNmdL._AC_UL200_SR200,200_.jpg",
     description:
@@ -32,6 +35,7 @@ const other_books = [
   {
     id: 8,
     title: "Horton Hears a Who!",
+    owner: "amyWatermelon",
     imgSrc:
       "https://images-na.ssl-images-amazon.com/images/I/91jgrV6XiiL._AC_UL200_SR200,200_.jpg",
     description:
@@ -42,6 +46,7 @@ const other_books = [
   {
     id: 9,
     title: "I Love You to the Moon and Back",
+    owner: "amyWatermelon",
     imgSrc:
       "https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX482_BO1,204,203,200_.jpg",
     description:

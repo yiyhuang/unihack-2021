@@ -45,6 +45,9 @@ class Header extends Component {
             <a class="navbar-item is-size-5" href="/#my-books">
               My Books
             </a>
+            <a class="navbar-item is-size-5" href="/#my-matches">
+              My Matches
+            </a>
             <a class="navbar-item is-size-5" href="/#account">
               Account
             </a>
