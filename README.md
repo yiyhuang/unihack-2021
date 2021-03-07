@@ -1,69 +1,98 @@
 <h1 align="center">
-🌐 MERN Stack
+📖 Page Turners 🔄
 </h1>
-<p align="center">
-MongoDB, Expressjs, React/Redux, Nodejs
-</p>
+
 
 <p align="center">
-   <a href="https://travis-ci.com/amazingandyyy/mern">
-      <img src="https://travis-ci.com/amazingandyyy/mern.svg?branch=master" />
-   </a>
-   <a href="https://github.com/amazingandyyy/mern/blob/master/LICENSE">
-      <img src="https://img.shields.io/badge/License-MIT-green.svg" />
-   </a>
-   <a href="https://circleci.com/gh/amazingandyyy/mern">
-      <img src="https://circleci.com/gh/amazingandyyy/mern.svg?style=svg" />
-   </a>
+ React.js, Nodejs, MongoDB, JSON
 </p>
 
-> MERN is a fullstack implementation in MongoDB, Expressjs, React/Redux, Nodejs.
+​	<img width="300" alt="logo" src="https://user-images.githubusercontent.com/56028891/110229467-c93f7f80-7f5d-11eb-8727-ac522a3d147e.png">
 
-MERN stack is the idea of using Javascript/Node for fullstack web development.
+Page Turners is a web app that provides a new way for book exchange. Unlike traditional book exchange services, our swipe and match system allows our user to find your book match more efficiently, instead of browsing through loads of books and asking the owners one by one. It provides an environmentally-friendly, straightforward and easy way to replace the books you don’t need with the ones you would like to read for free.
 
-## clone or download
+
+
+#### **Contributors**
+
+[Yiyang (Olivia) Huang](https://github.com/yiyhuang)
+
+[Shiyuan (Tenthy) Tan](https://github.com/TenthyTan)
+
+[Jingwei (Allan) Zhang](https://github.com/allanz0303)
+
+[Zhen (Alex) Gu](https://github.com/CTRL-C-AND-CTRL-V)
+
+
+
+#### <b>Screenshots</b>
+
+<img width="500" alt="homepage" src="https://user-images.githubusercontent.com/56028891/110228762-b9bd3800-7f57-11eb-9230-d744271234f7.png">
+<img width="500" alt="my_books" src="https://user-images.githubusercontent.com/56028891/110228765-bde95580-7f57-11eb-842b-770d5195476f.png">
+<img width="500" alt="my_matches1" src="https://user-images.githubusercontent.com/56028891/110228770-c5106380-7f57-11eb-8a7a-8761da87c70a.png">
+<img width="500" alt="my_matches2" src="https://user-images.githubusercontent.com/56028891/110228775-cb9edb00-7f57-11eb-880b-2e2a660651ae.png">
+
+
+
+
+
+#### **clone or download**
+
 ```terminal
-$ git clone https://github.com/amazingandyyy/mern.git
+$ git. clone https://github.com/yiyhuang/unihack-2021.git
 $ npm i
+$	npm install bulma			// To access CSS framework used in this project
+
 ```
 
-## project structure
-```terminal
-LICENSE
+
+
+#### **project structure**
+
+```terminal 
 package.json
 server/
-   package.json
-   .env (to create .env, check [prepare your secret session])
+	 package.json
+	 .env (to create .env, check [prepare your secret session])
 client/
-   package.json
+	 package.json
 ...
+
 ```
 
-# Usage (run fullstack app on your machine)
 
-## Prerequirements
-- [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
-- [Node](https://nodejs.org/en/download/) ^10.0.0
-- [npm](https://nodejs.org/en/download/package-manager/)
 
-notice, you need client and server runs concurrently in different terminal session, in order to make them talk to each other
+## **Usage
 
-## Client-side usage(PORT: 3000)
+
+
+### **Prerequirements**
+
+-<u>[MongoDB]</u>(https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
+
+-<u>[Node]</u>(https://nodejs.org/en/download/) ^10.0.0
+
+-<u>[npm]</u>(https://nodejs.org/en/download/package-manager/)
+
+You need client and server run concurrently in different terminal session, in order to make them talk to each other. 
+
+
+
+####  Client-side usage(PORT:3000)
+
 ```terminal
-$ cd client   // go to client folder
-$ npm i       // npm install pacakges
+$ cd client // go to client folder
+$ npm i // npm install packages
 $ npm run dev // run it locally
-
-// deployment for client app
-$ npm run build // this will compile the react code using webpack and generate a folder called docs in the root level
-$ npm run start // this will run the files in docs, this behavior is exactly the same how gh-pages will run your static site
 ```
 
-## Server-side usage(PORT: 8000)
 
-### Prepare your secret
 
-run the script at the first level:
+#### Server-side usage(PORT:3000)
+
+**Prepare your secret** 
+
+Run the script at the first level:
 
 (You need to add a JWT_SECRET in .env to connect to MongoDB)
 
@@ -72,71 +101,11 @@ run the script at the first level:
 $ echo "JWT_SECRET=YOUR_JWT_SECRET" >> ./server/src/.env
 ```
 
-### Start
+**Start**
 
 ```terminal
-$ cd server   // go to server folder
-$ npm i       // npm install pacakges
+$ cd server // go to server folder
+$ npm i // npm install packages
 $ npm run dev // run it locally
-$ npm run build // this will build the server code to es5 js codes and generate a dist file
 ```
 
-## Deploy Server to [Heroku](https://dashboard.heroku.com/)
-```terminal
-$ npm i -g heroku
-$ heroku login
-...
-$ heroku create
-$ npm run heroku:add <your-super-amazing-heroku-app>
-// remember to run this command in the root level, not the server level, so if you follow the documentation along, you may need to do `cd ..`
-$ pwd
-/Users/<your-name>/mern
-$ npm run deploy:heroku
-```
-
-### After creating heroku
-
-remember to update the file of [client/webpack.prod.js](https://github.com/amazingandyyy/mern/blob/master/client/webpack.prod.js)
-```javascript
- 'API_URI': JSON.stringify('https://your-super-amazing-heroku-app.herokuapp.com')
-```
-
-# Dependencies(tech-stacks)
-Client-side | Server-side
---- | ---
-axios: ^0.15.3 | bcrypt-nodejs: ^0.0.3
-babel-preset-stage-1: ^6.1.18|body-parser: ^1.15.2
-lodash: ^3.10.1 | cors: ^2.8.1
-react: ^16.2.0 | dotenv: ^2.0.0
-react-dom: ^16.2.0 | express: ^4.14.0
-react-redux: ^4.0.0 | jwt-simple: ^0.5.1
-react-router-dom: ^4.2.2 | mongoose: ^4.7.4
-redux: ^3.7.2 | morgan: ^1.7.0
-redux-thunk: ^2.1.0 |
-
-# Screenshots of this project
-
-User visit public and Home page
-![User visit public and Home page](http://i.imgur.com/ORCGHHY.png)
-
-User can sign in or sign up
-![User can sign in or sign up](http://i.imgur.com/rrmbU5I.png)
-
-After signing in user can go to account route and make request to token-protected API endpoint
-![After signing in user can go to account route](http://i.imgur.com/FzLB51u.png)
-
-## Standard
-
-[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
-
-## BUGs or comments
-
-[Create new Issues](https://github.com/amazingandyyy/mern/issues) (preferred)
-
-Email Me: amazingandyyy@gmail.com (welcome, say hi)
-
-## Author
-[Amazingandyyy](https://amazingandyyy.com)
-
-### License
-[MIT](https://github.com/amazingandyyy/mern/blob/master/LICENSE)
