@@ -1,6 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import "../../style/style.scss";
 import { FlipCard } from "../functions/FlipCard.js";
+import other_books from "../data/other-books.js";
+import my_books from "../data/my-books.js";
 
 export default class App extends Component {
   render() {
@@ -10,63 +12,65 @@ export default class App extends Component {
         <h1 class="subtitle">
           Press the like button to start your book exchange journey!
         </h1>
-        <div class="columns is-vcentered">
-          <div class="column has-text-right">
-            <IconButton command="left" />
-          </div>
-          <center>
-            <div class="column has-text-centered">
-              <FlipCard
-                title="The Cat in the Hat"
-                imageSrc="https://images-na.ssl-images-amazon.com/images/I/81drfTT9ZfL._AC_UL200_SR200,200_.jpg"
-                description="Chosen for a virtual lockdown read from us grandparents to 2
-                    year old grand daughter. Poetic, fun to read, and a naughty
-                    cat story that puts everything right before mum comes home.
-                    A great bedtime reading choice."
-              />
-            </div>
-          </center>
-          <div class="column has-text-left">
-            <IconButton command="right" />
-          </div>
-        </div>
-        <div class="has-text-centered">
-          <IconButton command="like" />
-        </div>
+        <Example />
       </div>
     );
   }
 }
 
-function IconButton(props) {
-  let returnImg;
-  switch (props.command) {
-    case "like":
-      returnImg = (
-        <button class="button is-large">
-          <span class="icon">
-            <img src="../img/icon_heart.png" alt="like" />
-          </span>
-        </button>
-      );
-      break;
-    case "left":
-      returnImg = (
-        <button class="button is-large">
-          <span class="icon">
-            <img src="../img/icon_arrow_left.png" alt="next" />
-          </span>
-        </button>
-      );
-      break;
-    case "right":
-      returnImg = (
-        <button class="button is-large">
-          <span class="icon">
-            <img src="../img/icon_arrow_right.png" alt="next" />
-          </span>
-        </button>
-      );
-  }
-  return <div>{returnImg}</div>;
+function HomeBookCard(props) {
+  return (
+    <FlipCard
+      title={props.currentBook.title}
+      imageSrc={props.currentBook.imgSrc}
+      description={props.currentBook.description}
+    />
+  );
+}
+
+function Example() {
+  const [index, setIndex] = useState(0);
+
+  const likeButton = (
+    <div class="has-text-centered p-6">
+      <button class="button is-large">
+        <span class="icon">
+          <img src="../img/icon_heart.png" alt="like" />
+        </span>
+      </button>
+    </div>
+  );
+
+  const prevButton =
+    index === 0 ? null : (
+      <button class="button is-large" onClick={() => setIndex(index - 1)}>
+        <span class="icon">
+          <img src="../img/icon_arrow_left.png" alt="previous" />
+        </span>
+      </button>
+    );
+
+  const nextButton =
+    index === other_books.length - 1 ? null : (
+      <button class="button is-large" onClick={() => setIndex(index + 1)}>
+        <span class="icon">
+          <img src="../img/icon_arrow_right.png" alt="next" />
+        </span>
+      </button>
+    );
+
+  return (
+    <div>
+      <div class="columns is-vcentered">
+        <div class="column has-text-right">{prevButton}</div>
+        <center>
+          <div class="column has-text-centered">
+            <HomeBookCard currentBook={other_books[index]} />
+          </div>
+        </center>
+        <div class="column has-text-left">{nextButton}</div>
+      </div>
+      {likeButton}
+    </div>
+  );
 }

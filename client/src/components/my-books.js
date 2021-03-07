@@ -8,7 +8,7 @@ export default class MyBooks extends Component {
     return (
       <div>
         <h1 class="title">My Books</h1>
-        <div class="columns">
+        <div class="columns is-multiline">
           {books.map((book) => (
             <div class="column">
               <FlipCard
@@ -17,6 +17,7 @@ export default class MyBooks extends Component {
                 description={book.description}
               />
             </div>
+
           ))}
         </div>
       </div>
