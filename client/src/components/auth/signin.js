@@ -1,66 +1,76 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import useForm from '../../use-form-react';
+import React from "react";
+import { connect } from "react-redux";
+import useForm from "../../use-form-react";
 
-import {signUserIn} from '../../actions';
-import CenterCard363 from '../centerCard363';
+import { signUserIn } from "../../actions";
 
 const Signin = (props) => {
-    const options = {
-        initialValues: {
-            'email': '',
-            'password': ''
-        },
-        callback: () => {
-            console.log('works!', inputs)
-            props.signUserIn(inputs);
-        },
-        debug: false
-    }
-    const { onSubmit, onChange, inputs, dirty, submitting } = useForm('AdvanceForm', options);
-    return (
-            <CenterCard363>
-                <div className='card'>
-                <h4 className="card-header">
-                    Sign In
-                </h4>
-                <div className="card-body">
-                <form onSubmit={onSubmit}>
-                    <div className="form-group">
-                        <label>Email:</label>
-                        <input
-                            name="email"
-                            type='email'
-                            value={inputs.email}
-                            className="form-control form-control-lg"
-                            placeholder="sample@email.com"
-                            onChange={onChange}
-                            required/>
-                    </div>
-                    <div className="form-group">
-                        <label>Password:</label>
-                        <input
-                            type='password'
-                            name="password"
-                            value={inputs.password}
-                            className="form-control form-control-lg"
-                            placeholder="your password"
-                            onChange={onChange}
-                            required/>
-                    </div>
-                    <div style={{'paddingTop': '30px'}}>
-                        <button
-                            type="submit"
-                            className="btn btn-lg btn-light btn-block"
-                            disabled={!dirty || submitting}>
-                            Sign In
-                        </button>
-                    </div>
-                </form>
-                </div>
-                </div>
-            </CenterCard363>
-    );
-}
+  const options = {
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    callback: () => {
+      console.log("works!", inputs);
+      props.signUserIn(inputs);
+    },
+    debug: false,
+  };
+  const { onSubmit, onChange, inputs, dirty, submitting } = useForm(
+    "AdvanceForm",
+    options
+  );
+  return (
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <h1 class="title">Sign In</h1>
+        <form onSubmit={onSubmit}>
+          <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input
+                name="email"
+                class="input"
+                type="email"
+                value={inputs.email}
+                placeholder="Email"
+                onChange={onChange}
+                required
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
 
-export default connect(null, {signUserIn})(Signin);
+          <div class="field">
+            <p class="control has-icons-left">
+              <input
+                name="password"
+                class="input"
+                type="password"
+                value={inputs.password}
+                placeholder="Password"
+                onChange={onChange}
+                required
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <p class="control">
+              <button class="button is-success">Sign In</button>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default connect(null, { signUserIn })(Signin);
